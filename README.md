@@ -6,4 +6,11 @@ Also experiment for using <http://draw.io> as drawing tool.
 
 ![so far](./music.png)
 
+## Riffstation 
+<http://www.riffstation.com>
 
+## Capo
+<http://supermegaultragroovy.com/products/capo/ >
+
+## SoundSlice
+<https://www.soundslice.com>
