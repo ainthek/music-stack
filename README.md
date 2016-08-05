@@ -2,8 +2,6 @@
 
 Just trying to document my music stack (I always forget after half year of not playing).
 
-Also experiment for using <http://draw.io> as drawing tool.
-
 ![so far](./music.png)
 
 ## Riffstation 
@@ -28,8 +26,19 @@ Also experiment for using <http://draw.io> as drawing tool.
 Exports Rocksmith 2014 songs to Guitar Pro tabs http://www.rocksmithtotab.de
 <https://github.com/fholger/RocksmithToTab>
 
-## http://ignition.customsforge.com
+## Ignition
 
+<http://ignition.customsforge.com>
+
+## guitarpatches
+
+<http://guitarpatches.com>
+
+## guitarmasterclass 
+
+Backing tracks, videos and more....
+
+https://www.guitarmasterclass.net/
 
 # Workflow
 
@@ -39,3 +48,7 @@ Exports Rocksmith 2014 songs to Guitar Pro tabs http://www.rocksmithtotab.de
 4. export to tabs with mono ./RocksmithToTab.exe
 5. open GuitarPro
 6. open RockSmith
+
+
+7. download other tabs from <https://www.ultimate-guitar.com>
+8. create custom version by mixing multiple versions in GuitarPro
