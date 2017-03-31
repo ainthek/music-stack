@@ -52,3 +52,10 @@ https://www.guitarmasterclass.net/
 
 7. download other tabs from <https://www.ultimate-guitar.com>
 8. create custom version by mixing multiple versions in GuitarPro
+
+# Tab Web Sites 
+
+I use:
+
+- <https://www.jellynote.com/>
+- <https://www.ultimate-guitar.com/>
