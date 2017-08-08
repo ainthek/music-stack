@@ -4,17 +4,28 @@ Just trying to document my music stack (I always forget after half year of not p
 
 ![so far](./music.png)
 
-## Riffstation 
-
-<http://www.riffstation.com>
+# Software
 
 ## Capo
 
 <http://supermegaultragroovy.com/products/capo/>
 
-## SoundSlice
+I use this more than Riffstation for detecting chords,
+and even for play along. I have made most of "my" tabs with this.
 
-<https://www.soundslice.com>
+
+## Riffstation 
+
+<http://www.riffstation.com>
+
+I have purchased this before capo, but I use it less and less.
+I miss some feature present in capo.
+
+## Guitar Pro
+
+<https://www.guitar-pro.com>
+
+Just received version 7, and playing with it. Proud owner of 70E licence for version 6.
 
 
 ## Rocksmith Custom Song Project
@@ -38,7 +49,12 @@ Exports Rocksmith 2014 songs to Guitar Pro tabs http://www.rocksmithtotab.de
 
 Backing tracks, videos and more....
 
-https://www.guitarmasterclass.net/
+<https://www.guitarmasterclass.net/>
+
+## SoundSlice
+
+<https://www.soundslice.com>
+
 
 # Workflow
 
@@ -53,9 +69,23 @@ https://www.guitarmasterclass.net/
 7. download other tabs from <https://www.ultimate-guitar.com>
 8. create custom version by mixing multiple versions in GuitarPro
 
+# Mobile Apps
+
+TODO:
+
 # Tab Web Sites 
 
-I use:
+## ultimate-guitar.com
+<https://www.ultimate-guitar.com/>, but I'm angry with their "complete song policy". My tabs are these <https://www.ultimate-guitar.com/contribution/12977315-a.in.the.k/tabs>
 
-- <https://www.jellynote.com/>
-- <https://www.ultimate-guitar.com/>
+## TabPro 
+I have had some week day and have payed for this.
+<https://plus.ultimate-guitar.com/tab-pro/browse/>
+
+## jellynote
+<https://www.jellynote.com/>
+
+## My Own Tab Repo
+<https://github.com/ainthek/music-projects>
+
+
