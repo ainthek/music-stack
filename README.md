@@ -6,6 +6,16 @@ Just trying to document my music stack (I always forget after half year of not p
 
 # Software
 
+## GarageBand
+Using as DAW for most of recordings. 
+
+Installed <https://lepouplugins.blogspot.sk> LePou plugins (AMPS) but no big success with these sounds so far (no time to experiment)
+
+
+## Zoom Edit&Share
+
+Much easier to control my G2Nu from comp then with buttons
+
 ## Capo
 
 <http://supermegaultragroovy.com/products/capo/>
