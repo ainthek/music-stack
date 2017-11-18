@@ -45,6 +45,8 @@ Exports Rocksmith 2014 songs to Guitar Pro tabs http://www.rocksmithtotab.de
 
 <http://guitarpatches.com>
 
+<http://line6.com/customtone/>
+
 ## guitarmasterclass 
 
 Backing tracks, videos and more....
@@ -71,7 +73,22 @@ Backing tracks, videos and more....
 
 # Mobile Apps
 
-TODO:
+- Riff Maestro
+- Riffstation
+- JamUp
+
+- Guitar Pro
+- Tab Pro
+
+- GarageBand
+- AmpliTube
+
+- Tone Stack GO
+
+
+- D'Chords
+- D'Scales
+- Chord Master
 
 # Tab Web Sites 
 
@@ -79,7 +96,7 @@ TODO:
 <https://www.ultimate-guitar.com/>, but I'm angry with their "complete song policy". My tabs are these <https://www.ultimate-guitar.com/contribution/12977315-a.in.the.k/tabs>
 
 ## TabPro 
-I have had some week day and have payed for this.
+One day and have payed for this, but nothing special, most of tabs are "stolen" from elsewhere anyway.
 <https://plus.ultimate-guitar.com/tab-pro/browse/>
 
 ## jellynote
