@@ -67,8 +67,23 @@ Backing tracks, videos and more....
 
 <https://www.soundslice.com>
 
+## Hydrogen
 
-# Workflow
+## onlinesequencer
+
+<https://onlinesequencer.net>
+
+## GB2MIDI
+
+GarageBand AIF to MIDI. Convert MIDI Loops (tracks) to MIDI.
+<http://www.larskobbe.de/wordpress/wp-content/uploads/2014/02/GB2MIDI.zip>
+
+## Aria Maestoza
+<https://sourceforge.net/projects/ariamaestosa/files/ariamaestosa/1.4.13/AriaMaestosa-osx-1.4.13c.zip/download>
+
+# Workflows
+
+## RockSmith
 
 1. search and download from http://ignition.customsforge.com
 2. convert for mac using Custom Song Creator Toolkit
@@ -76,10 +91,13 @@ Backing tracks, videos and more....
 4. export to tabs with mono ./RocksmithToTab.exe
 5. open GuitarPro
 6. open RockSmith
-
-
 7. download other tabs from <https://www.ultimate-guitar.com>
 8. create custom version by mixing multiple versions in GuitarPro
+
+## GarageBand and MIDI
+
+Exporting Midi: <http://scotttroyer.com/2014/05/export-midi-from-garageband/>
+
 
 # Mobile Apps
 
@@ -111,6 +129,7 @@ One day and have payed for this, but nothing special, most of tabs are "stolen" 
 
 ## jellynote
 <https://www.jellynote.com/>
+<https://www.jellynote.com/en/artist/delain/385184/albums>
 
 ## My Own Tab Repo
 <https://github.com/ainthek/music-projects>
