@@ -34,15 +34,15 @@ function patches(unit) {
       sequence(1, pageCount),
       page => `${base}/${unit.link}&page=${page}`
     );
+    // Promise od Array
     return Promise.map(urls, getPage, { concurrency: 1 })
       .then(concat);
-
-    function getPage(url) {
-      return request.get(url)
-        .then(parseHtml)
-        .then(parsePatches)
-    }
   }
+}
+function getPage(url) {
+  return request.get(url)
+    .then(parseHtml)
+    .then(parsePatches)
 }
 
 function parsePatches($) {
@@ -64,17 +64,22 @@ function parsePatches($) {
 }
 
 
-// -------------------------------------------------------
-function _test() {
-  const log = (s) => (console.error(s), s);
-
-  log(`POST:${__filename}`);
-  units().then(log);
-
-  patches({
-    name: 'G2Nu and G2.1Nu',
-    link: 'patches.php?unit=G2Nu'
-  }).then(log);
-
+module.exports = {
+  units: units,
+  patches: patches
 }
-_test();
+
+// // -------------------------------------------------------
+// function _test() {
+//   const log = (s) => (console.error(s), s);
+
+//   log(`POST:${__filename}`);
+//   units().then(log);
+
+//   patches({
+//     name: 'G2Nu and G2.1Nu',
+//     link: 'patches.php?unit=G2Nu'
+//   }).then(log);
+
+// }
+// _test();
