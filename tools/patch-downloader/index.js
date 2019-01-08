@@ -20,7 +20,11 @@ gp.patches(unit)
   .then((patch) => gp.downloadAndSave(unit, patch, out))
   .then(console.log)
 */
-
+// trim sample
+// gp.patches(unit)
+//   .then((patches) => patches.find((patch) => patch.id === "5819"))
+//   .then((patch) => gp.downloadAndSave(unit, patch, out))
+//   .then(console.log)
 
 
 gp.patches(unit, true).then(pages => {

@@ -97,14 +97,15 @@ function download(unit, patch) {
 
 function downloadAndSave(unit, patch, folder = process.cwd()) {
   // this shelk be moved somewhere else probably
-  return retry(download,10)(unit, patch).then(save);
+  return retry(download, 10)(unit, patch).then(save);
 
 
   function save({ unit, patch, attachment }) {
 
+    attachmentFilename = normalizeFileName(attachment.filename); //TODO: check if needed in unrarSave as well 
+    
     let patchFolder = path.join(folder, unit.unit, `${patch.id}`);
-
-    let metaFileName = path.resolve(patchFolder, attachment.filename + ".json");
+    let metaFileName = path.resolve(patchFolder, attachmentFilename + ".json");
     let meta = fs.outputJson(metaFileName, { unit, patch }, { spaces: 2 });
 
     let att;
@@ -113,7 +114,7 @@ function downloadAndSave(unit, patch, folder = process.cwd()) {
       let list = extractor.extractAll();
       att = unrarSave(list, patchFolder);
     } else {
-      let filename = path.resolve(patchFolder, attachment.filename);
+      let filename = path.resolve(patchFolder, attachmentFilename);
       att = fs.outputFile(filename, attachment.body)
     }
     return Promise.all([meta, att]);
@@ -121,6 +122,11 @@ function downloadAndSave(unit, patch, folder = process.cwd()) {
 
 }
 
+function normalizeFileName(filename) {
+  // not expecting any dirname here;
+  let ext = path.extname(filename);
+  return path.basename(filename, ext).trim() + ext;
+}
 
 function parseAttachment(response) {
   let { headers, body } = response;
