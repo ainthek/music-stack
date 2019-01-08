@@ -1,7 +1,7 @@
 # Just notes about patch-downloader
 
 ## Patches per "DRIVE module"
-grep '<Module4' -A 2 -r ./out/ | grep Prm1 \| 
+grep '<Module4' -A 2 -r ./out/ | grep Prm1 |\
 	xs-sed -E 's;</?Prm1>;;g' | xs-sed -E "s;-\s+([0-9]+);\t\1;" | cut -f2 | cnt
 
 ## Patches using "PV Drive"
