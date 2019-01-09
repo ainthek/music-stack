@@ -29,6 +29,7 @@ function saveFileOrDir(file, folder) {
   // FIXME: sanitize paths, prevent attacks to abs paths from rar data
   let absPath = folder ? path.resolve(folder, name) : name;
 
+  /*eslint no-else-return: "off"*/
   if (directory) {
     return fs.mkdirp(absPath);
   } else {

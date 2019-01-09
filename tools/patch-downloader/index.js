@@ -28,7 +28,7 @@ gp.patches(unit)
 
 
 gp.patches(unit, true).then(pages => {
-  pages.map(page => {
+  pages.map(page =>
     page.then(patches => {
       console.log("page ready");
       return patches.map((patch) =>
@@ -36,5 +36,5 @@ gp.patches(unit, true).then(pages => {
         .then(() => console.log("patch downloaded:", patch.id))
       )
     })
-  });
+  );
 });

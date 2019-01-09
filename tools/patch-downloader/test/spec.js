@@ -1,4 +1,5 @@
 'use strict'
+/*eslint no-invalid-this: "off"*/
 /*global describe:true,it:true,	after:true,before:true,afterEach:true,beforeEach:true */
 const base = "https://guitarpatches.com";
 const request = require("request-promise-native");
