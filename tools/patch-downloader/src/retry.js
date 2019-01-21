@@ -3,6 +3,8 @@
 const debuglog = require('util').debuglog('retry');
 const retry = (fn, retries = 3, backoff = () => 100) => async (...args) => {
   /*eslint consistent-return: "off"*/
+  /*eslint no-await-in-loop: "off"*/
+  
   for (let i = 0; i < retries; i++) {
     try {
       return await fn(...args);

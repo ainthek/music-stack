@@ -22,7 +22,7 @@ module.exports = function(list, folder) {
 
 function saveFileOrDir(file, folder) {
   const { fileHeader, extract } = file;
-  const [state, data] = extract;
+  const [state, data] = extract; /*eslint no-unused-vars: "off"*/
   const { name, flags: { directory } } = fileHeader;
   debuglog(`saving:${name}, directory: ${directory}, folder:${folder}`);
 

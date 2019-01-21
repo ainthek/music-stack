@@ -294,14 +294,14 @@ module.exports = {
       "no-label-var": "error",
       "no-restricted-globals": "error",
       "no-shadow-restricted-names": "error",
-      "no-shadow": "error",
+      "no-shadow": "warn", // toto bezne robim
       "no-undef-init": "error",
       "no-undefined": "error"
     },
     "problem": {
       "no-undef": "error",
       "no-unused-vars": "error",
-      "no-use-before-define": "error"
+      "no-use-before-define": ["error", { "functions": false }] //nato pouzivam function declaration predsa aby som ju pisal pod zdrojak a nie hore, toto neni pascal
     }
   },
   "Strict Mode": {

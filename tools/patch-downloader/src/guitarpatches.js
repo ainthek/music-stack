@@ -21,10 +21,6 @@ const array = (s, e) => { // TODO: better
 };
 const concat = (arrays) => arrays.reduce((p, c) => p.concat(c), []);
 // -------------------------------------------------------
-const units = () => request.get(`${base}/units.php`)
-  .then(parseHtml)
-  .then(parseUnits)
-
 const parseUnits = ($) => $("H2")
   .map((i, e) => {
     const link = $(e).parent().attr("href");
@@ -34,6 +30,10 @@ const parseUnits = ($) => $("H2")
       unit: new URL(link, base).searchParams.get("unit")
     }
   }).get();
+
+const units = () => request.get(`${base}/units.php`)
+  .then(parseHtml)
+  .then(parseUnits)
 // -------------------------------------------------------
 
 const getPage = (unit, page = 1) =>
@@ -100,13 +100,13 @@ function downloadAndSave(unit, patch, folder = process.cwd()) {
 
   function save({ unit, patch, attachment }) {
 
-    attachmentFilename = normalizeFileName(attachment.filename); //TODO: check if needed in unrarSave as well 
+    const attachmentFilename = normalizeFileName(attachment.filename); //TODO: check if needed in unrarSave as well 
 
     const patchFolder = path.join(folder, unit.unit, `${patch.id}`);
     const metaFileName = path.resolve(patchFolder, `${attachmentFilename}.json`);
     const meta = fs.outputJson(metaFileName, { unit, patch }, { spaces: 2 });
 
-    let att;
+    let att; /*eslint init-declarations: "off"*/
     if (attachment.type === ".rar") {
       const extractor = unrar.createExtractorFromData(attachment.body);
       const list = extractor.extractAll();
@@ -127,7 +127,7 @@ function normalizeFileName(filename) {
 }
 
 function parseAttachment(response) {
-  const { headers, body } = response;
+  const { headers /*, body */ } = response;
   const cd = parseContentDisposition(headers["content-disposition"]);
   const filename = cd.parameters.filename;
   const ext = path.extname(filename);
