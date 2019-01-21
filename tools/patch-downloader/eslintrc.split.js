@@ -195,7 +195,7 @@ module.exports = {
       "object-shorthand": ["error", "consistent-as-needed"], //ak su nejake expandnute nech su vsecky
       "prefer-arrow-callback": "error",
       "prefer-const": "error", // suhlasim, nech je to error          
-      "prefer-destructuring": "error",
+      "prefer-destructuring": "warn", //TODO: agree on something
       "prefer-numeric-literals": "error",
       "prefer-reflect": "error",
       "prefer-rest-params": "error",
@@ -206,9 +206,9 @@ module.exports = {
       "symbol-description": "error"
     },
     "layout": {
-      "arrow-parens": "error", 
+      "arrow-parens": "error",
       "arrow-spacing": "error",
-      "generator-star-spacing": "error", 
+      "generator-star-spacing": "error",
       "rest-spread-spacing": "error",
       "template-curly-spacing": ["error", "never"], // useful with --fix and prefer-template errors 
       "yield-star-spacing": "error"

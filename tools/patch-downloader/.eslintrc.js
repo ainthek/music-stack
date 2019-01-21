@@ -8,8 +8,10 @@ module.exports = {
     ...rules["Best Practices"]["suggestion"],
     ...rules["ECMAScript 6"]["problem"],
     ...rules["ECMAScript 6"]["suggestion"],
-    "template-curly-spacing":["error","never"]
-     // ...rules["ECMAScript 6"]["layout"]
+    // from ...rules["ECMAScript 6"]["layout"],
+    "template-curly-spacing": ["error", "never"],
+    ...rules["Node.js and CommonJS"]["problem"],
+    ...rules["Node.js and CommonJS"]["suggestion"]
   },
 
   "parserOptions": {
