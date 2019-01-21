@@ -27,10 +27,10 @@ const units = () => request.get(`${base}/units.php`)
 
 const parseUnits = ($) => $("H2")
   .map((i, e) => {
-    let link = $(e).parent().attr("href");
+    const link = $(e).parent().attr("href");
     return {
       name: $(e).text(),
-      link,
+      link: link,
       unit: new URL(link, base).searchParams.get("unit")
     }
   }).get();
@@ -46,11 +46,11 @@ async function patches(unit, paged = false) {
   //https://guitarpatches.com/patches.php?unit=G2Nu
   const getUnitPage = (p) => getPage(unit, p);
 
-  let first = await getUnitPage(1);
-  let count = parsePageCount(first);
+  const first = await getUnitPage(1);
+  const count = parsePageCount(first);
   // 
-  let others = array(2, count).map(getUnitPage);
-  let pages = [first, ...others].map((p) => Promise.resolve(p)
+  const others = array(2, count).map(getUnitPage);
+  const pages = [first, ...others].map((p) => Promise.resolve(p)
     .then(parsePatchTable)
   );
 
@@ -65,8 +65,8 @@ function parsePatchTable($) {
     .find("tbody>tr").map(parseTr).get();
 
   function parseTr(i, tr) {
-    let link = $("TD:nth-child(1) a", tr).attr("href");
-    let id = new URL(link, base).searchParams.get("ID");
+    const link = $("TD:nth-child(1) a", tr).attr("href");
+    const id = new URL(link, base).searchParams.get("ID");
     return {
       name: $("TD:nth-child(1)", tr).text().trim(),
       link: link,
@@ -90,9 +90,7 @@ function download(unit, patch) {
       pool: downloadPool
     })
     .then(parseAttachment)
-    .then((attachment) => {
-      return { unit, patch, attachment }
-    });
+    .then((attachment) => ({ unit, patch, attachment }));
 }
 
 function downloadAndSave(unit, patch, folder = process.cwd()) {
@@ -103,18 +101,18 @@ function downloadAndSave(unit, patch, folder = process.cwd()) {
   function save({ unit, patch, attachment }) {
 
     attachmentFilename = normalizeFileName(attachment.filename); //TODO: check if needed in unrarSave as well 
-    
-    let patchFolder = path.join(folder, unit.unit, `${patch.id}`);
-    let metaFileName = path.resolve(patchFolder, attachmentFilename + ".json");
-    let meta = fs.outputJson(metaFileName, { unit, patch }, { spaces: 2 });
+
+    const patchFolder = path.join(folder, unit.unit, `${patch.id}`);
+    const metaFileName = path.resolve(patchFolder, `${attachmentFilename}.json`);
+    const meta = fs.outputJson(metaFileName, { unit, patch }, { spaces: 2 });
 
     let att;
     if (attachment.type === ".rar") {
-      let extractor = unrar.createExtractorFromData(attachment.body);
-      let list = extractor.extractAll();
+      const extractor = unrar.createExtractorFromData(attachment.body);
+      const list = extractor.extractAll();
       att = unrarSave(list, patchFolder);
     } else {
-      let filename = path.resolve(patchFolder, attachmentFilename);
+      const filename = path.resolve(patchFolder, attachmentFilename);
       att = fs.outputFile(filename, attachment.body)
     }
     return Promise.all([meta, att]);
@@ -124,24 +122,24 @@ function downloadAndSave(unit, patch, folder = process.cwd()) {
 
 function normalizeFileName(filename) {
   // not expecting any dirname here;
-  let ext = path.extname(filename);
+  const ext = path.extname(filename);
   return path.basename(filename, ext).trim() + ext;
 }
 
 function parseAttachment(response) {
-  let { headers, body } = response;
-  let cd = parseContentDisposition(headers["content-disposition"]);
-  let filename = cd.parameters.filename;
-  let ext = path.extname(filename);
+  const { headers, body } = response;
+  const cd = parseContentDisposition(headers["content-disposition"]);
+  const filename = cd.parameters.filename;
+  const ext = path.extname(filename);
   return {
-    filename,
+    filename: filename,
     type: ext,
     body: response.body
   }
 }
 module.exports = {
-  units: units,
-  patches: patches,
-  download: download,
+  units,
+  patches,
+  download,
   downloadAndSave
 }

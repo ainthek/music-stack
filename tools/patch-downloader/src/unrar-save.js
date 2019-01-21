@@ -13,21 +13,21 @@ const path = require("path");
 const debuglog = require('util').debuglog('unrar-save');
 
 module.exports = function(list, folder) {
-  let [state, arcHeader] = list;
-  let done = arcHeader.files.map((f) =>
+  const [state, arcHeader] = list;
+  const done = arcHeader.files.map((f) =>
     saveFileOrDir(f, folder)
   );
   return Promise.all(done);
 }
 
 function saveFileOrDir(file, folder) {
-  let { fileHeader, extract } = file;
-  let [state, data] = extract;
-  let { name, flags: { directory } } = fileHeader;
-  debuglog(`saving:${name}, directory: ${directory},folder:${folder}`);
-  
+  const { fileHeader, extract } = file;
+  const [state, data] = extract;
+  const { name, flags: { directory } } = fileHeader;
+  debuglog(`saving:${name}, directory: ${directory}, folder:${folder}`);
+
   // FIXME: sanitize paths, prevent attacks to abs paths from rar data
-  let absPath = folder ? path.resolve(folder, name) : name;
+  const absPath = folder ? path.resolve(folder, name) : name;
 
   /*eslint no-else-return: "off"*/
   if (directory) {

@@ -192,25 +192,25 @@ module.exports = {
       "no-useless-constructor": "error",
       "no-useless-rename": "error",
       "no-var": "error",
-      "object-shorthand": "error",
+      "object-shorthand": ["error", "consistent-as-needed"], //ak su nejake expandnute nech su vsecky
       "prefer-arrow-callback": "error",
-      "prefer-const": "error",
+      "prefer-const": "error", // suhlasim, nech je to error          
       "prefer-destructuring": "error",
       "prefer-numeric-literals": "error",
       "prefer-reflect": "error",
       "prefer-rest-params": "error",
       "prefer-spread": "error",
-      "prefer-template": "error",
+      "prefer-template": "error", // jasne 
       "require-yield": "error",
       "sort-imports": "error",
       "symbol-description": "error"
     },
     "layout": {
-      "arrow-parens": "error",
+      "arrow-parens": "error", 
       "arrow-spacing": "error",
-      "generator-star-spacing": "error",
+      "generator-star-spacing": "error", 
       "rest-spread-spacing": "error",
-      "template-curly-spacing": "error",
+      "template-curly-spacing": ["error", "never"], // useful with --fix and prefer-template errors 
       "yield-star-spacing": "error"
     },
     "problem": {

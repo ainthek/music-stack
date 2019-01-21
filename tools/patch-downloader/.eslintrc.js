@@ -5,7 +5,11 @@ module.exports = {
   "env": {},
   "rules": {
     ...rules["Best Practices"]["problem"],
-    ...rules["Best Practices"]["suggestion"]
+    ...rules["Best Practices"]["suggestion"],
+    ...rules["ECMAScript 6"]["problem"],
+    ...rules["ECMAScript 6"]["suggestion"],
+    "template-curly-spacing":["error","never"]
+     // ...rules["ECMAScript 6"]["layout"]
   },
 
   "parserOptions": {
